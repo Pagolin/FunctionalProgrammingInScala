@@ -76,6 +76,9 @@ class FunSetSuite extends FunSuite {
     val s1 = singletonSet(1)
     val s2 = singletonSet(2)
     val s3 = singletonSet(3)
+    val s4 = Set(1,3,5,7,1000)
+    val s5 = Set(-1, -17, -999, 3, 0, 2)
+    def p = (x:Int) => (x < 10)
   }
 
   /**
@@ -108,6 +111,13 @@ class FunSetSuite extends FunSuite {
       assert(contains(s, 1), "Union 1")
       assert(contains(s, 2), "Union 2")
       assert(!contains(s, 3), "Union 3")
+    }
+  }
+
+  test("forall x< 10 for s4= {1,3,5,7,1000} and s5 = {-1, -17, -999, 3, 0, 2}"){
+    new TestSets {
+      assert(!forall(s4, p), "Not all numbers in s4 are <10 . Expected false")
+      assert(forall(s5, p), "All numbers in s5 are <10. Expected true")
     }
   }
 
