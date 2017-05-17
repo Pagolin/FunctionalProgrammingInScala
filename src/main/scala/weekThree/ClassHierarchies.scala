@@ -7,14 +7,26 @@ object ClassHierarchies {
 
 
   /** Rules for class hierarchies, inheritance and polymorphism are
-    * (for some obscure reason :-D ) quite the same as in java.
+    * (for some obscure reason :-D ) quite similar to those in java.
     * E.g. abstract classes don't need to implement their methods and can't
     * be instantiated.
+    * Scala is also a single inheritance language. Instead of javas interfaces,
+    * TRAITS are used to realize sort of multiple inheritance, e.g. :
+    *
+    * trait exampleTrait{
+    *   def someAttribute: Int
+    *   def anotherAttribute: Int
+    *   def firstFunction: Int
+    *   def secondFunction: (Int, Int)=>Boolean
+    *   def thirdFunction(x:Int, y:Int): Int = someAttribute * anotherAttribute
+    * }
+    *
+    * Unlike interfaces TRAITS may contain also fields and implemented/concrete
+    * methods. Unlike classes they can not have value parameters
     */
 
   abstract class IntSet {
     def contains(x: Int): Boolean
-
     def incl(x: Int): IntSet
     def union(other : IntSet) : IntSet
   }
@@ -22,12 +34,13 @@ object ClassHierarchies {
   /** Example implementation as a sorted  binary tree
     * Note: In the incl() method new elements are added to a structure by
     * creating new structures containing them.
-    * The result is, that such trees are an example of Persistent Datastructures,
+    * The result is, that such trees are an example of PERSISTENT DATASTRUCTURES,
     * meaning that even after changes the old structure persists, which is crucial to
     * the parallel computation aspects of functional programming
     */
+
   // Instead of class Empty1 extends IntSet, creating an object leads
-  // to Empty being a singleton, so everytime we create a new NonEmpty, we
+  // to Empty being a singleton, so every time we create a new NonEmpty, we
   // let it's "open ends" point to the same Empty object
 
   object Empty1 extends IntSet{
@@ -60,6 +73,21 @@ object ClassHierarchies {
       ((left union right) union other) incl elem
 
     override def toString: String = "{" + left + elem + right + "}"
+  }
+// Exception and error handling 's also quit similar to java...
+  class troubleShooting{
+    def specialError(msg: String) = throw new Error(msg)
+    def throwsException() = throw new IllegalArgumentException("Just because I can")
+    def tryCatchBlock(): Unit = {
+      try {
+        throwsException()
+        println("this line is never executed")
+      } catch {
+        case e: Exception => println("exception caught: " + e)
+      }
+    }
+
+
   }
 
   def main(args: Array[String]) {
