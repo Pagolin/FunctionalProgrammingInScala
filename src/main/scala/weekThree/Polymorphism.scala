@@ -62,3 +62,4 @@ class Nil[T] extends List[T]{
     else getElement(index-1, xs.tail)
 
 }
+

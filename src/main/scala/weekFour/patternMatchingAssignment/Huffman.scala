@@ -1,5 +1,4 @@
-package patmat
-
+package weekFour.patternMatchingAssignment
 
 /**
   * Assignment 4: Huffman coding
@@ -186,7 +185,7 @@ object Huffman {
     * on the two parameter code tables.
     */
   def mergeCodeTables(a: CodeTable, b: CodeTable): CodeTable = {
-    a.map((elem) => (elem._1, 0::elem._2)) ++ b.map((elem) => (elem._1, 1::elem._2))
+    a.map( (elem) => (elem._1, 0::elem._2)) ++ b.map((elem) => (elem._1, 1::elem._2))
   }
 
   /**

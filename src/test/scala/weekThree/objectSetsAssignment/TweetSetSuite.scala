@@ -1,4 +1,4 @@
-package weekThree.objsets
+package weekThree.objectSetsAssignment
 
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite

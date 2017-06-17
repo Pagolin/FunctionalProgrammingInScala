@@ -1,11 +1,9 @@
-package weekFour.patmat
+package weekFour.patternMatchingAssignment
 
 import org.scalatest.FunSuite
-
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-
-import patmat.Huffman._
+import weekFour.patternMatchingAssignment.Huffman._
 
 @RunWith(classOf[JUnitRunner])
 class HuffmanSuite extends FunSuite {

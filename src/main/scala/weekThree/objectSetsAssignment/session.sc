@@ -1,4 +1,4 @@
-
+import weekThree.ClassHierarchies.NonEmpty
 
 object session{
   val testset = new Empty

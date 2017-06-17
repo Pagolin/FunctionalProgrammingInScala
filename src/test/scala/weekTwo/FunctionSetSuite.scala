@@ -12,7 +12,7 @@ import org.scalatest.junit.JUnitRunner
   *  - right-click the file in eclipse and chose "Run As" - "JUnit Test"
   */
 @RunWith(classOf[JUnitRunner])
-class FunSetSuite extends FunSuite {
+class FunctionSetSuite extends FunSuite {
 
   /**
     * Link to the scaladoc - very clear and detailed tutorial of FunSuite
@@ -47,7 +47,7 @@ class FunSetSuite extends FunSuite {
   // }
 
 
-  import FunSets._
+  import FunctionSetsAssignment._
 
   test("contains is implemented") {
     assert(contains(x => true, 100))

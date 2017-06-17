@@ -1,4 +1,4 @@
-package weekThree.objsets
+package weekThree.objectSetsAssignment
 
 
 
@@ -34,7 +34,7 @@ class Tweet(val user: String, val text: String, val retweets: Int) {
   */
 abstract class TweetSet {
 
-  def max(mTweet: Tweet): _root_.weekThree.objsets.Tweet = null
+  def max(mTweet: Tweet): _root_.weekThree.objectSetsAssignment.Tweet = null
 
   /**
     * This method takes a predicate and returns a subset of all the elements

@@ -1,4 +1,4 @@
-package weekThree.objsets
+package weekThree.objectSetsAssignment
 
 object TweetReader {
 

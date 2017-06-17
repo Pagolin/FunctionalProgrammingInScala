@@ -3,7 +3,7 @@ package weekTwo
 /**
   * Created by lisza on 15.05.17.
   */
-object FunSets {
+object FunctionSetsAssignment {
     /**
       * We represent a set by its characteristic function, i.e.
       * its `contains` predicate.
